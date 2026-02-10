@@ -92,6 +92,31 @@ accesslog = "-"
 
 ## API 使用
 
+### kimi-cli 中设置（`config.toml`）
+类似下方设置
+```
+default_model = "moonshotai-kimi-k2-5"
+default_thinking = true
+default_yolo = false
+
+[models.moonshotai-kimi-k2-5]
+provider = "zenmux"
+model = "moonshotai/kimi-k2.5"
+max_context_size = 262144
+capabilities = ["image_in", "video_in", "always_thinking"]
+
+[models.stepfun-step3-5-flash]
+provider = "zenmux"
+model = "stepfun/step-3.5-flash"
+max_context_size = 256000
+capabilities = ["always_thinking"]
+
+[providers.zenmux]
+type = "anthropic"
+base_url = "http://127.0.0.1:8000"
+api_key = xxx
+```
+
 ### Anthropic 格式
 
 ```bash
